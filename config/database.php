@@ -4,7 +4,7 @@
 date_default_timezone_set('America/Mexico_City');
 
 define('DB_HOST', 'localhost');
-define('DB_NAME', 'salud_dashboard');
+define('DB_NAME', 'salud');
 define('DB_USER', 'root');
 define('DB_PASS', '');
 

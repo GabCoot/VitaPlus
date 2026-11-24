@@ -10,7 +10,7 @@ $pagina = $_GET['pagina'] ?? 'dashboard';
 $hoy = date('Y-m-d');
 
 $pacientesTotal = $pdo->query("
-    SELECT COUNT(*) FROM pacientes
+    SELECT COUNT(*) FROM personas
 ")->fetchColumn();
 
 $stmt = $pdo->prepare("SELECT COUNT(*) FROM citas WHERE fecha = ?");
@@ -25,7 +25,7 @@ $stmt->execute([$hoy]);
 $pendientes = $stmt->fetchColumn();
 
 $solicitudes = $pdo->query("
-    SELECT COUNT(*) FROM solicitudes_web
+    SELECT COUNT(*) FROM procesos_pendientes
     WHERE estado = 'Pendiente'
 ")->fetchColumn();
 
